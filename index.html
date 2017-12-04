@@ -1,0 +1,145 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#visionP").hide();
+            $("#misionP").hide();
+            $("#historiaH").click(function () {
+                $("#historiaP").toggle();
+                $("#visionP").hide();
+                $("#misionP").hide();
+            });
+        });
+        $(document).ready(function () {
+            $("#visionH").click(function () {
+                $("#visionP").toggle();
+                $("#historiaP").hide();
+                $("#misionP").hide();
+            });
+        });
+        $(document).ready(function () {
+            $("#misionH").click(function () {
+                $("#misionP").toggle();
+                $("#historiaP").hide();
+                $("#visionP").hide();
+            });
+        });
+    </script>
+</head>
+
+<style>
+    h2 {
+        background: #f2f2f2;
+        padding: 16px;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="header-container">
+        <header class="wrapper clearfix">
+            <h1 class="title"><img src="img/bike.png"/>  XBitsBikers</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="login.php">Login</a>
+                    </li>
+                    <li>
+                        <a href="registroUsuario.php">Registro</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="main-container">
+        <div class="main wrapper clearfix">
+
+            <article>
+                <div style=" margin: auto;  width: 100%;">
+                    <header>
+                        <h1>About XBitsBikers </h1>
+                    </header>
+                    <section>
+                        <h2 id="historiaH">+ Historia</h2>
+                        <p id="historiaP">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non interdum velit. Sed dignissim non ante cursus ornare.
+                            Nullam eget ipsum in quam molestie vulputate a ac nunc. Fusce laoreet lacus tortor, ac sollicitudin
+                            lorem cursus imperdiet. Vestibulum ligula est, faucibus vel nisi at, dignissim laoreet velit.
+                            Aenean mollis et orci vitae finibus. Vivamus elementum, massa ac maximus ullamcorper, risus ipsum
+                            pulvinar justo, ac vestibulum arcu augue ut risus. Aliquam ultrices aliquet felis eget feugiat.
+                            Pellentesque efficitur nulla hendrerit risus ullamcorper, eget gravida est faucibus. Proin id
+                            dignissim magna, sed pharetra tortor. Vestibulum gravida arcu a viverra sodales. Suspendisse
+                            tempor nisl neque, in iaculis tortor pretium non. Pellentesque luctus elementum erat vel vulputate.
+                            Vestibulum sodales vestibulum blandit. Suspendisse sollicitudin bibendum commodo. Integer id
+                            sapien faucibus metus pellentesque accumsan. In efficitur erat dapibus ipsum malesuada tristique.
+                            Vivamus fermentum lacus nunc.
+                        </p>
+                        <h2 id="misionH">+ Mision</h2>
+                        <p id="misionP">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non interdum velit. Sed dignissim non ante cursus ornare.
+                            Nullam eget ipsum in quam molestie vulputate a ac nunc. Fusce laoreet lacus tortor, ac sollicitudin
+                            lorem cursus imperdiet. Vestibulum ligula est, faucibus vel nisi at, dignissim laoreet velit.
+                            Aenean mollis et orci vitae finibus. Vivamus elementum, massa ac maximus ullamcorper, risus ipsum
+                            pulvinar justo, ac vestibulum arcu augue ut risus. Aliquam ultrices aliquet felis eget feugiat.
+                            Pellentesque efficitur nulla hendrerit risus ullamcorper, eget gravida est faucibus. Proin id
+                            dignissim magna, sed pharetra tortor. Vestibulum gravida arcu a viverra sodales. Suspendisse
+                            tempor nisl neque, in iaculis tortor pretium non. Pellentesque luctus elementum erat vel vulputate.
+                            Vestibulum sodales vestibulum blandit. Suspendisse sollicitudin bibendum commodo. Integer id
+                            sapien faucibus metus pellentesque accumsan. In efficitur erat dapibus ipsum malesuada tristique.
+                            Vivamus fermentum lacus nunc.
+                        </p>
+                        <h2 id="visionH">+ Vision</h2>
+                        <p id="visionP">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non interdum velit. Sed dignissim non ante cursus ornare.
+                            Nullam eget ipsum in quam molestie vulputate a ac nunc. Fusce laoreet lacus tortor, ac sollicitudin
+                            lorem cursus imperdiet. Vestibulum ligula est, faucibus vel nisi at, dignissim laoreet velit.
+                            Aenean mollis et orci vitae finibus. Vivamus elementum, massa ac maximus ullamcorper, risus ipsum
+                            pulvinar justo, ac vestibulum arcu augue ut risus. Aliquam ultrices aliquet felis eget feugiat.
+                            Pellentesque efficitur nulla hendrerit risus ullamcorper, eget gravida est faucibus. Proin id
+                            dignissim magna, sed pharetra tortor. Vestibulum gravida arcu a viverra sodales. Suspendisse
+                            tempor nisl neque, in iaculis tortor pretium non. Pellentesque luctus elementum erat vel vulputate.
+                            Vestibulum sodales vestibulum blandit. Suspendisse sollicitudin bibendum commodo. Integer id
+                            sapien faucibus metus pellentesque accumsan. In efficitur erat dapibus ipsum malesuada tristique.
+                            Vivamus fermentum lacus nunc.
+                        </p>
+
+                    </section>
+
+                </div>
+
+            </article>
+        </div>
+        <!-- #main -->
+    </div>
+    <!-- #main-container -->
+
+    <div class="footer-container">
+        <footer class="wrapperfooterfixed">
+            <h3>Proyecto Registro de Bicicletas 2017</h3>
+            <h3 style="margin:0px; padding:0px;">Proyecto Registro de Bicicetas 2017</h3> <a href="index.html" >About XBitsBikers </p>
+                
+        </footer>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
