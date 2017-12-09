@@ -9,8 +9,10 @@
 
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/mensajes.css"  type="text/css" media="all" />
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
         <?php session_start(); ?>
     </head>
 
@@ -20,6 +22,30 @@
             session_start(); 
         } 
     ?>
+
+    
+<script type="text/javascript">
+        function showLightbox() {
+
+            document.getElementById('over').style.display='slow';
+            document.getElementById('fade').style.display='slow';
+        $(document).ready(function() {
+                    $("#over").delay(500).fadeIn('slow');
+                    $("#fade").delay(1).slideDown('slow');
+                    
+                });
+
+        }
+        function hideLightbox() {
+            document.getElementById('over').style.display='slow';
+            document.getElementById('fade').style.display='slow';
+            $(document).ready(function() {
+                    $("#over").delay(1).fadeOut('slow');
+                    $("#fade").delay(100).fadeOut('slow');
+                });
+        }
+
+    </script>
     <body>
             <div class="header-container">
                     <header class="wrapper clearfix">
@@ -30,7 +56,7 @@
                         <li><a href="foros.php">Foros</a></li>
                         <li><a href="registroBicicleta.php">Registro</a></li>
                         <li><a href="traspasoBicicletas.php">Traspaso</a></li>
-                        <li><a href="reporteBicicletas.php">Reporte</a></li>
+                        <li><a href="reporteBicicletas.php">Crear Alerta</a></li>
                         <li><a href="informacionBicicletas.php">Informacion</a></li>
                            
                         </ul>
@@ -46,27 +72,35 @@
                         <h1>Reportar bicicleta</h1>
                     </header>
                     <section>
-                        <form>
+                    <form method="post" action="./server/controllerReporteBicicleta.php" name="regForm" id="regForm">
+                        <label style="margin: auto; width: 20%; padding: 10px;" for="user">Biciceta:</label>
+                        <select style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="IdBicicleta" name="IdBicicleta">>
+                        <option value="0"> Seleccion</option>  
+                        <?php
+                            include ("/library/conexion.php");
+                            $sql = "SELECT IdBicicleta, NumeroMarco FROM bicicleta ORDER BY IdBicicleta ASC";
+                            $result = mysqli_query($conexion, $sql);
+                            while($tabla_bici = mysqli_fetch_array($result)) {
+                            echo "<option value='".$tabla_bici['IdBicicleta']."'>".$tabla_bici['NumeroMarco']."</option>";
+                            }
+                          ?>
+                         </select> <br> 
                             
-                            <label style="margin: auto; width: 20%; padding: 10px;" for="user">Estatus:</label>
-                            <select style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="country" name="country">
+                            <label style="margin: auto; width: 20%; padding: 10px;" for="user">Estado:</label>
+                            <select style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="Estadobici" name="Estadobici">
                                     <option value="australia">Robada</option>
+                                    <option value="australia">Perdida</option>
                                   </select> <br> 
-                                  <label style="margin: auto; width: 20%; padding: 10px;" for="user">Biciceta:</label>
-                                  <select style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="country" name="country">
-                                          <option value="australia">123902148091284</option>
-                                          <option value="canada">123902148091284</option>
-                                          <option value="usa">123902148091284</option>
-                                        </select> <br> 
+                                  
                                         <label style="margin: auto; width: 20%; padding: 10px;"for="user">Descripcion del robo:</label>
-                                        <input style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="user" name="i_user" required><br>
-                                        <label style="margin: auto; width: 20%; padding: 10px;"for="user">Ubicazion del robo:</label>
-                                        <input style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="user" name="i_user" required><br>
-                                        <label style="margin: auto; width: 20%; padding: 10px;"for="user">Fecha/Hora:</label>
-                                        <input style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="user" name="i_user" required><br>
+                                        <input style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="DescripcionAlerta" name="DescripcionAlerta" required><br>
+                                        <label style="margin: auto; width: 20%; padding: 10px;"for="user">Ubicacion del robo:</label>
+                                        <input style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="UbicacionRobo" name="UbicacionRobo" required><br>
+                                        <label style="margin: auto; width: 20%; padding: 10px;"for="user">Fecha/Hora del incidente:</label>
+                                        <input style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="Fecha" name="Fecha" required><br>
                                     
                                       
-                                        <button class="button" style="margin: 30px 150px;">Reportar</button>
+                                        <input type="submit" style="margin: 20px 0px; width: 200px;"class="button" id="Submit"  name="Submit" value="Reportar" style="margin: 30px 150px;"><br>
                                         </form>
                             
                     </section>
@@ -76,6 +110,9 @@
                 </article>
             </div> <!-- #main -->
         </div> <!-- #main-container -->
+        <div>
+        <?php  include ("/library/mensajes.php");?>
+        </div>
 
         <div class="footer-container">
             <footer class="wrapperfooterfixed">

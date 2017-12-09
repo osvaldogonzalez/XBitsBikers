@@ -31,7 +31,7 @@
                             <li><a href="foros.php">Foros</a></li>
                             <li><a href="registroBicicleta.php">Registro</a></li>
                             <li><a href="traspasoBicicletas.php">Traspaso</a></li>
-                            <li><a href="reporteBicicletas.php">Reporte</a></li>
+                            <li><a href="reporteBicicletas.php">Crear Alerta</a></li>
                             <li><a href="informacionBicicletas.php">Informacion</a></li>
                                
                             </ul>
