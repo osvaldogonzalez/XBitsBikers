@@ -1,7 +1,7 @@
 /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
 
 table{
-    width: 20%;
+    width: 100%;
     margin: 10px auto;
     border-collapse: collapse;
     text-align: left;
@@ -449,6 +449,8 @@ footerLink {
     h3 {
         page-break-after: avoid;
     }
+
+
 
 
 }
