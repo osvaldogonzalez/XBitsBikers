@@ -103,12 +103,12 @@
                                         <input style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="UbicacionRobo" name="UbicacionRobo" required><br>
                                         <div class="form-group">
                                         <label for="dtp_input1" style="margin: auto; width: 50%; padding: 10px;">Fecha/Hora del incidente</label> <br>
-                                        <div class="input-group date form_datetime" data-date="2017-17-01T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                        <div class="input-group date form_datetime" data-date="2017-17-12T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
                                             <input class="form-control" size="16" type="text" value="" readonly>
                                             <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                             <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
                               
-                                        <input type="hidden" id="dtp_input1" value="" /><br/>
+                                        <input type="hidden" name="Fecha" id="dtp_input1" value="" /><br/>
                                     </div>
                                     </div>
 

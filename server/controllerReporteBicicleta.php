@@ -12,7 +12,8 @@
 	$Estado = trim ($_POST['Estadobici']);
 	$Fecha = trim ($_POST['Fecha']);
 	$DescripcionAlerta = trim ($_POST['DescripcionAlerta']);
-	$UbicacionRobo = trim ($_POST['UbicacionRobo']);
+    $UbicacionRobo = trim ($_POST['UbicacionRobo']);
+    echo ($Fecha);
 
 
 	   /*validacion de campos requeridos*/
@@ -23,7 +24,7 @@
 			$_SESSION['ERROR_HANDLER'] = "Por favor seleccione una bicicleta.";
 			session_start();
             die();
-            echo 'entro';
+           
 		}
 		else
 		{
@@ -35,7 +36,7 @@
 				/*Si no existe reporte*/
 				if(mysqli_num_rows($resultalerta) == 0)
 				{
-					echo 'entro2';
+					
                                 
                         /*Registro Alerta*/			
                             $sql = "INSERT INTO Alerta (IdBicicleta, Estado, Fecha, DescripcionAlerta, UbicacionRobo, IdUsuario) 
@@ -46,7 +47,7 @@
                                 echo 'entro3';
                                 //echo("Error description: " . mysqli_error($conexion));                        							
                                 $_SESSION['ERROR_HANDLER'] = "Reporte registrado con éxito.";
-                                header ('Location: ../reporteBicicletas.php');
+                              //  header ('Location: ../reporteBicicletas.php');
                                 die();					
                             }
                             else
@@ -57,8 +58,7 @@
                                 header ('Location: ../reporteBicicletas.php');
                             }
 
-                    }else{
-                        echo 'entro5';							
+                    }else{							
                     header ('Location: ../reporteBicicletas.php');
                     $_SESSION['ERROR_HANDLER'] = "La alerta ya fue notificada anteriormente.";
                     die();
