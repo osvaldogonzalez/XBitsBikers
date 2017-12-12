@@ -13,7 +13,7 @@
 	$Fecha = trim ($_POST['Fecha']);
 	$DescripcionAlerta = trim ($_POST['DescripcionAlerta']);
     $UbicacionRobo = trim ($_POST['UbicacionRobo']);
-    echo ($Fecha);
+
 
 
 	   /*validacion de campos requeridos*/
@@ -41,18 +41,18 @@
                         /*Registro Alerta*/			
                             $sql = "INSERT INTO Alerta (IdBicicleta, Estado, Fecha, DescripcionAlerta, UbicacionRobo, IdUsuario) 
                             VALUES('$Idbicicleta', '$Estado','$Fecha','$DescripcionAlerta','$UbicacionRobo','".$_SESSION['s_usuario']."')";
-                            echo $sql;
+                           // echo $sql;
                             if(mysqli_query($conexion, $sql))
                             {
-                                echo 'entro3';
+                                
                                 //echo("Error description: " . mysqli_error($conexion));                        							
                                 $_SESSION['ERROR_HANDLER'] = "Reporte registrado con éxito.";
-                              //  header ('Location: ../reporteBicicletas.php');
+                                header ('Location: ../reporteBicicletas.php');
                                 die();					
                             }
                             else
                             {
-                                echo 'entro4';
+                                
                                 $_SESSION['ERROR_HANDLER'] = "Error registrando Alerta. Por favor intente de nuevo.";
                                 $_SESSION['ERROR_HANDLER'] = $sql;
                                 header ('Location: ../reporteBicicletas.php');

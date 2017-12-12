@@ -83,7 +83,7 @@
                         <option value="0"> Seleccion</option>  
                         <?php
                             include ("/library/conexion.php");
-                            $sql = "SELECT IdBicicleta, NumeroMarco FROM bicicleta ORDER BY IdBicicleta ASC";
+                            $sql = "SELECT IdBicicleta, NumeroMarco FROM bicicleta where IdUsuario = '".$_SESSION['s_usuario']."' ORDER BY IdBicicleta ASC";
                             $result = mysqli_query($conexion, $sql);
                             while($tabla_bici = mysqli_fetch_array($result)) {
                             echo "<option value='".$tabla_bici['IdBicicleta']."'>".$tabla_bici['NumeroMarco']."</option>";
@@ -98,9 +98,9 @@
                                   </select> <br> 
                                   
                                         <label style="margin: auto; width: 50%; padding: 10px;"for="user">Descripcion del robo:</label>
-                                        <input style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="DescripcionAlerta" name="DescripcionAlerta" required><br>
+                                        <textarea rows="3" cols="40" style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="DescripcionAlerta" name="DescripcionAlerta" required></textarea><br>
                                         <label style="margin: auto; width: 40%; padding: 10px;"for="user">Ubicacion del robo:</label>
-                                        <input style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="UbicacionRobo" name="UbicacionRobo" required><br>
+                                        <textarea rows="3" cols="40" style="margin: 5px; margin: auto; width: 80%; padding: 10px;" id="UbicacionRobo" name="UbicacionRobo" required></textarea><br>
                                         <div class="form-group">
                                         <label for="dtp_input1" style="margin: auto; width: 50%; padding: 10px;">Fecha/Hora del incidente</label> <br>
                                         <div class="input-group date form_datetime" data-date="2017-17-12T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">

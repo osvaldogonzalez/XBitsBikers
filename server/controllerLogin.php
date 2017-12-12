@@ -34,7 +34,7 @@ if(!isset($_SESSION))
 			$_SESSION['s_nombre'] = $row['Nombre'];
 			$_SESSION['s_apellido']= $row['Apellido'];
 			$_SESSION['s_direcciom'] = $row['Direccion'];
-			$_SESSION['S_ROLE'] = $row['Cedula'];
+			$_SESSION['s_cedula'] = $row['Cedula'];
             $_SESSION['s_email'] = $row['Email'];
             $_SESSION['s_idPerfil'] = $row['idPerfil'];
             $_SESSION['s_telefono'] = $row['Telefono'];
